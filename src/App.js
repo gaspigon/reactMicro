@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import Navbar from './components/Nabvar/Navbar'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import Header from './components/Header/Header';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import Itemcount from './components/ItemCount/ItemCount';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Header  greeting="Micro 3D" parraf="Productos & Diseños"/>
+      <ItemListContainer />
+      <ItemDetailContainer />
+      <Itemcount stock={15}/>
     </div>
   );
 }

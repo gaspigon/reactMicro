@@ -1,0 +1,40 @@
+.box{
+    text-align: center;
+    margin: 2%;
+    width: 50%;
+    height: 250px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    
+}
+.img{
+    width: 100%;
+}
+.boxCard{
+    position: relative;
+    text-align: left;
+    overflow: hidden;
+    float: left;
+    margin: 2%;
+    width: 45%;
+    height: 100%;
+
+}
+
+.box-img{
+    margin: 0;
+    overflow: hidden;
+	height: 100%;
+	
+	
+    
+    
+}
+
+.box-text{
+    display: flex;
+    margin: 0;
+    width: 20%;
+    height: 50px;
+}

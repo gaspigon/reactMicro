@@ -1,0 +1,43 @@
+.nav{
+    border: 1px solid black;
+    background-color: rgba(13, 14, 13, 0.822);
+    margin-bottom: 0;
+}
+
+.btn{
+    color: rgb(16, 119, 38);
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    width: 4rem;
+    height: 30px;
+    font-weight: bold;
+    font-size: 10px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.img-nav{
+    width: 10%;
+    object-fit: cover;
+  
+}
+.box-nav{
+ 
+    display: flex;
+    justify-content:space-between;
+    height: 65px;
+}
+
+
+.box-links {
+    display: flex;
+    justify-content: flex-end;
+    width: 20%;
+    list-style: none;
+}
+
+.links{
+    margin: 2%;
+    display: flex;
+}
+

@@ -1,0 +1,17 @@
+.btn-card{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin-bottom: 10px;
+    border: none;
+    border-radius: 30px;
+    background-color: rgba(92, 86, 86, 0.13)
+
+}
+
+.box-count{
+    display: flex;
+    justify-content: center;
+}
