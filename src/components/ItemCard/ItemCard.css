@@ -30,8 +30,9 @@ p{
 }
 
 .btn-detalle{
-    background-color: #4d5058;
+  
     border: none;
     border-radius: 8px;
-    color: #fff;
+    color: black;
+    
 }
