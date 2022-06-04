@@ -40,3 +40,13 @@
     display: flex;
 }
 
+.madeClick{
+    text-decoration: none;
+    color: rgb(77, 185, 77);
+    font-size: 13px;
+    width: 5rem;
+    height: 30px;
+    font-weight: bold;
+    margin-top: 2px;
+}
+

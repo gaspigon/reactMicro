@@ -9,14 +9,15 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      {/* 
-      <Itemcount stock={15}/> */}
     <BrowserRouter>
       <Navbar />
-       {/* <Header greeting="Micro 3D" parraf="Productos & Diseños"/>   */}
+      <Routes>
+           <Route path='/' element={<Header  greeting="Micro 3D" parraf="Productos & Diseños"/>} /> 
+      </Routes> 
       <Routes>
         <Route path='/' element={<ItemListContainer />} /> 
-        <Route path='/category/:categoryId' element={<ItemListContainer  greeting='Productos por categoria'/>} />
+
+        <Route path='/category/:categoryId' element={<ItemListContainer  greeting="Productos por categoria"/>} />
         <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
       </Routes>
     </BrowserRouter>

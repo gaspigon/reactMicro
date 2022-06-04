@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom'
 
 import ItemList from '../ItemList/ItemList'
 
-const ItemListContainer = () => {
+const ItemListContainer = (props) => {
 
     const [products, setProducts] = useState([])
 
@@ -26,12 +26,12 @@ const ItemListContainer = () => {
         })
     }
 
-    },[])
+    },[categoryId])
     
     return(
         <div>
-            <p>Productos</p>
             {/* { products.map(product => <p>{product.name}</p>) } */}
+            <h1 >{props.greeting}</h1>
             <ItemList products={products}/>
         </div>
     )
