@@ -3,13 +3,14 @@ import '../ItemDetail/ItemDetail.css'
 
 
 
-const ItemDetail = ({name,img,description}) =>{
+const ItemDetail = ({name,img,description,stock}) =>{
     return(
         <div className='box'>
              
             <div className="boxCard">
                 <h2>{name}</h2>
                 <p className='boxText'>{description}</p>
+                <p >Stock Disponible: {stock}</p>
             </div>
             <div className='box-img'>
                 <img className='img' src={img} />

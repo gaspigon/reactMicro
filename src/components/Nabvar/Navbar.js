@@ -19,15 +19,15 @@ const Navbar = () => {
                     </li>
                     <li className="links">
                        
-                        <Link className='btn' to='/Accesorios'>Accesorios</Link>
+                        <Link className='btn' to='/category/3d'>Accesorios</Link>
                     </li>
                     <li className="links">
      
-                        <Link className='btn' to='/Impresoras'>Impresoras</Link>
+                        <Link className='btn' to='/category/impresoras'>Impresoras</Link>
                     </li>
                     <li className="links">
   
-                        <Link className='btn' to='/Robotica'>Robotica</Link>
+                        <Link className='btn' to='/category/robotica'>Robotica</Link>
                     </li>
                     <li className="links"> 
                         <CartWidget />

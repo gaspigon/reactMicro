@@ -12,7 +12,6 @@ const ItemCard = ({id, name, price,img,stock}) => {
                      <Link className='btn-detalle' to={`/detail/${id}`} >Ver Detalle</Link>
                      {/* <p>Stock Disponible:  {stock}</p> */}
                      {/* <Itemcount stock={stock}/> */}
-                     {/* <button className='btn-cart'>Agregar a carrito</button> */}
         </div>
     
 )
