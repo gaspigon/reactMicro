@@ -3,7 +3,7 @@ const products = [
         id: '1',
         name: 'Porta Cepillos',
         price: 500,
-        category: 'Accesorios 3d',
+        category: '3d',
         img: '/images/portacepillo.jpg',
         stock: 25,
         description: 'Porta Cepillos, diferentes formas y colores. Impreso en 3D con un material apto para agua y gran duracion'
@@ -12,7 +12,7 @@ const products = [
         id:'2',
         name: 'Soporte Notebook',
         price: 1000,
-        category: 'Accesorios 3d',
+        category: '3d',
         img: '/images/soporte.jpg',
         stock: 50,
         description: 'Soporte Para Notebooks'
@@ -21,7 +21,7 @@ const products = [
         id:'3',
         name: 'Maceta',
         price: 1000,
-        category: 'Accesorios 3d',
+        category: '3d',
         img: '/images/maceta2.jpg',
         stock: 50,
         description: 'Maceta 3d'
@@ -30,7 +30,7 @@ const products = [
         id:'4',
         name: 'Anycubic Photon',
         price: 35000,
-        category: 'Impresoras',
+        category: 'impresoras',
         img: '/images/anycubic2.png',
         stock: 50,
         description: 'Impresora 3D'
@@ -48,7 +48,7 @@ const products = [
         id: '6',
         name: 'Robot Otto',
         price: 12000,
-        category: 'Robotica',
+        category: 'robotica',
         img:'/images/otulis.jpg',
         stock: 35,
         description: 'Kit para el armado de Robot Interactivo Bluetooth'
@@ -68,7 +68,7 @@ export const getProducts = () => {
     return new Promise((resolve) =>{
             setTimeout(() =>{
                 resolve(products)
-            },2000)
+            },1000)
     })
 }
 
