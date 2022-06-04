@@ -1,7 +1,7 @@
 
 import '../Nabvar/Navbar.css'
 import CartWidget from '../CartWidget/CartWidget'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 
 
@@ -14,20 +14,17 @@ const Navbar = () => {
                
                 <ul className="box-links">
                     <li className="links">
-                    
-                        <Link className='btn' to='/'>Inicio</Link>
+                        <NavLink to={'/'} className={({isActive}) => isActive ? 'madeClick' : 'btn'}>Inicio</NavLink>
                     </li>
                     <li className="links">
-                       
-                        <Link className='btn' to='/category/3d'>Accesorios</Link>
+                        <NavLink to={'/category/3d'} className={({isActive}) => isActive ? 'madeClick' : 'btn'}>Accesorios</NavLink>
                     </li>
                     <li className="links">
-     
-                        <Link className='btn' to='/category/impresoras'>Impresoras</Link>
+                        <NavLink to={'/category/impresoras'} className={({isActive}) => isActive ? 'madeClick' : 'btn'}>Impresoras</NavLink>
                     </li>
                     <li className="links">
-  
-                        <Link className='btn' to='/category/robotica'>Robotica</Link>
+                        <NavLink to={'/category/robotica'} className={({isActive}) => isActive ? 'madeClick' : 'btn'}>Robotica</NavLink>
+
                     </li>
                     <li className="links"> 
                         <CartWidget />
