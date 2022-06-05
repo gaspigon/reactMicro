@@ -5,7 +5,7 @@ import { getProductsById } from "../../asyncmock";
 import { useParams } from "react-router-dom";
 
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = (stock) => {
 
     const [product, setProduct] = useState()
 

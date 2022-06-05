@@ -20,7 +20,7 @@ const Itemcount = ({stock}) => {
 
     return(
         <div >
-            <div style={{display:'flex',justifyContent:'center',}}>
+            <div style={{display:'flex',justifyContent:'center',marginTop:45}}>
                 <ButtonCount handleClick ={decrement} label='-' color='red'/>
                 <p className='number'>{count}</p>
                 <ButtonCount handleClick={increment} label='+' color='green' />
