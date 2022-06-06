@@ -5,19 +5,19 @@ import { getProductsById } from "../../asyncmock";
 import { useParams } from "react-router-dom";
 
 
-const ItemDetailContainer = (stock) => {
+const ItemDetailContainer = () => {
 
     const [product, setProduct] = useState()
 
     const {productId} = useParams()
-
+    
 
     useEffect( () => {
         getProductsById(productId)
             .then(response =>{
                 setProduct(response)
             })
-    },[])
+    },[productId])
 
     return(
         <div>

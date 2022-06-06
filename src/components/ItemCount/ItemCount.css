@@ -1,21 +1,18 @@
 .btn-agregar{
-    
+   
     border: none;
     border-radius: 10px;
     box-shadow: 0 2px 20px rgba(22, 22, 22, 0.2);
     background-color: #4d5058;
     color: #fff;
     height: 30px;
-    margin-bottom: 20px;
-}
-
-.box-btn{
-    display: flex;
-    justify-content: center;
-
+    
 }
 
 .number{
     margin: 5px 15px ;
     margin-bottom: 0;
+}
+.box-count{
+    height: 40px;
 }
