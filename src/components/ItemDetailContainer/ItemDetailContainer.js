@@ -10,14 +10,14 @@ const ItemDetailContainer = () => {
     const [product, setProduct] = useState()
 
     const {productId} = useParams()
-
+    
 
     useEffect( () => {
         getProductsById(productId)
             .then(response =>{
                 setProduct(response)
             })
-    },[])
+    },[productId])
 
     return(
         <div>

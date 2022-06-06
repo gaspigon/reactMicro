@@ -15,6 +15,7 @@ const Navbar = () => {
                 <ul className="box-links">
                     <li className="links">
                         <NavLink to={'/'} className={({isActive}) => isActive ? 'madeClick' : 'btn'}>Inicio</NavLink>
+                        
                     </li>
                     <li className="links">
                         <NavLink to={'/category/3d'} className={({isActive}) => isActive ? 'madeClick' : 'btn'}>Accesorios</NavLink>

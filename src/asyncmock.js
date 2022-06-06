@@ -6,7 +6,7 @@ const products = [
         category: '3d',
         img: '/images/portacepillo.jpg',
         stock: 25,
-        description: 'Porta Cepillos, diferentes formas y colores. Impreso en 3D con un material apto para agua y gran duracion'
+        description: 'Porta Cepillos, Impreso en 3D con un material apto para agua y gran duracion'
     },
     {
         id:'2',
@@ -60,7 +60,7 @@ export const getProductsById = (id) =>{
         setTimeout(() => {
             resolve(products.find(prod => prod.id === id))
                 resolve(products)
-        },400)
+        },500)
     })
 }
 
@@ -68,7 +68,7 @@ export const getProducts = () => {
     return new Promise((resolve) =>{
             setTimeout(() =>{
                 resolve(products)
-            },1000)
+            },500)
     })
 }
 

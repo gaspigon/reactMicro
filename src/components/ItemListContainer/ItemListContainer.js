@@ -10,8 +10,11 @@ import ItemList from '../ItemList/ItemList'
 const ItemListContainer = (props) => {
 
     const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
 
     const {categoryId} = useParams()
+
+
 
 
 
@@ -19,6 +22,10 @@ const ItemListContainer = (props) => {
         if(!categoryId){
         getProducts().then(response =>{
             setProducts(response)
+        }).catch(error => {
+            console.log(error)
+        }).finally(() => {
+            setLoading(false)
         })
     } else{
         getProductsByCategory(categoryId).then(response => {
@@ -27,6 +34,10 @@ const ItemListContainer = (props) => {
     }
 
     },[categoryId])
+
+    if(loading){
+        return <h1>Cargando...</h1>
+    }
     
     return(
         <div>
