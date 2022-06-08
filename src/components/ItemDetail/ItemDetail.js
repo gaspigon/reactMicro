@@ -1,20 +1,25 @@
 import React from 'react'
 import '../ItemDetail/ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
-import { useState } from 'react'
+import { useState , useContext} from 'react'
 import { Link } from 'react-router-dom'
+import { Context } from '../../App'
 
 
 
 
-const ItemDetail = ({name,img,description,stock}) =>{
+const ItemDetail = ({id,price,name,img,description,stock}) =>{
 
     const [cantidad, setCantidad] = useState(0)
 
+    const {cart, setCart} = useContext(Context) 
+  
+    
     const handleOnAdd = (count) => {
         console.log('agregue al carrito')
         console.log(count)
         setCantidad(count)
+        setCart([...cart,{id,name,price,count}])
     }
     return(
         <div className='box'>

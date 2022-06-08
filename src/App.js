@@ -1,27 +1,31 @@
 import Navbar from './components/Nabvar/Navbar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
-import Header from './components/Header/Header';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css';
 import CartWidget from './components/CartWidget/CartWidget';
+import {createContext, useState} from 'react'
 
-function App() {
+export const Context = createContext()
+
+const App = () => {
+  const [cart, setCart] = useState([])
+ console.log(cart)
+  
   return (
 
     <div className="App">
-    <BrowserRouter>
-      
-      <Navbar />
-      <Header greeting="Micro 3D" parraf="Productos & Diseños"/>
-      {/* <Header greeting="Micro 3D" parraf="Productos & Diseños"/> */}
-    <Routes>
-        <Route path='/' element={<ItemListContainer/>} />  
-        <Route path='/category/:categoryId' element={<ItemListContainer  greeting="Productos por categoria"/>} />
-        <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
-        <Route path='/cart' element={<CartWidget/>} />
-      </Routes>
-    </BrowserRouter>
+      <Context.Provider value={{cart, setCart}}>
+        <BrowserRouter>
+          <Navbar />
+            <Routes>
+                <Route path='/' element={<ItemListContainer/>} />  
+                <Route path='/category/:categoryId' element={<ItemListContainer  greeting="Productos por categoria"/>} />
+                <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
+                <Route path='/cart' element={<CartWidget/>} />
+          </Routes>
+      </BrowserRouter>
+    </Context.Provider>
 
     </div>
   );

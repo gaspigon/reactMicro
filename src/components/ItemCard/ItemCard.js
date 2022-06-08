@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import '../ItemCard/ItemCard.css'
 
 
-const ItemCard = ({id, name, price,img}) => {
+const ItemCard = ({id, name, img}) => {
     
     return(
        <div className='box-card'>
