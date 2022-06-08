@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
             .then(response =>{
                 setProduct(response)
             })
-    },[productId])
+    },[])
 
     return(
         <div>

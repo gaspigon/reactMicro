@@ -3,7 +3,7 @@ import '../ItemListContainer/ItemListContainer.css'
 import {useState, useEffect } from 'react'
 import { getProducts } from '../../asyncmock'
 import { getProductsByCategory } from '../../asyncmock'
-import { useParams } from 'react-router-dom'
+import {  useParams } from 'react-router-dom'
 import Header from '../Header/Header'
 
 import ItemList from '../ItemList/ItemList'

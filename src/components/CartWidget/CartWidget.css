@@ -1,6 +1,7 @@
 .cart-img{
     width: 30px;
     object-fit: cover;
+    background-color: none;
 }
 
 .cart-p{
@@ -14,5 +15,6 @@
 }
 
 .cart-box{
-    width: 70px;
+    border: none;
+    color: white;
 }

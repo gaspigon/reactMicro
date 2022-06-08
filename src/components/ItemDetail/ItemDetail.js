@@ -12,14 +12,13 @@ const ItemDetail = ({id,price,name,img,description,stock}) =>{
 
     const [cantidad, setCantidad] = useState(0)
 
-    const {cart, setCart} = useContext(Context) 
+    const {cart, addItem} = useContext(Context) 
   
     
     const handleOnAdd = (count) => {
         console.log('agregue al carrito')
-        console.log(count)
         setCantidad(count)
-        setCart([...cart,{id,name,price,count}])
+        addItem([...cart,{id,name,price,count}])
     }
     return(
         <div className='box'>
