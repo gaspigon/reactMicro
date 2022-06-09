@@ -1,5 +1,5 @@
 .cart-img{
-    width: 30px;
+    width: 50px;
     object-fit: cover;
     background-color: none;
 }
@@ -17,4 +17,5 @@
 .cart-box{
     border: none;
     color: white;
+    background: none;
 }

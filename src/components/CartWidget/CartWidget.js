@@ -1,19 +1,20 @@
 
 import '../CartWidget/CartWidget.css'
 import { useContext } from 'react'
-import { Context } from '../../App'
+import { CartContext } from '../../context/CartContext'
 
 const CartWidget = () => {
 
-    const {getQuantity} = useContext(Context)
+    const {getQuantity} = useContext(CartContext)
 
     const quantity= getQuantity()
 
     return (
-        <p to='/cart' className="cart-box">
+        <button to='/cart' className="cart-box">
+            <img className='cart-img' src='/images/cartt.svg'/>
             {quantity}
-            {console.log(quantity)}
-        </p>
+
+        </button>
     )
 }
 

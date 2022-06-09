@@ -1,10 +1,10 @@
 import { useContext } from "react"
-import { Context } from "../../App"
+import { CartContext } from "../../context/CartContext"
 
 
 const Cart = () => {
 
-    const { cart} = useContext(Context)
+    const { cart} = useContext(CartContext)
     return(
         <div>
             <h1>Cart</h1>
