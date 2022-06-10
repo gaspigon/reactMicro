@@ -11,8 +11,8 @@ const CartWidget = () => {
 
     return (
         <button to='/cart' className="cart-box">
-            <img className='cart-img' src='/images/cartt.svg'/>
-            {quantity}
+            <img className='cart-img' src='/images/carttt.svg'/>
+            <p className='cart-p'>{quantity}</p>
 
         </button>
     )

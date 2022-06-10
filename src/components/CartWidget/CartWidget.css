@@ -1,4 +1,6 @@
 .cart-img{
+    position: relative;
+    bottom: 14px;
     width: 50px;
     object-fit: cover;
     background-color: none;
@@ -7,15 +9,18 @@
 .cart-p{
    
     position: absolute;
-    top: 8px;
-    right: 14px;
+    top: 5px;
+    right: 8px;
     margin: 0;
     color: white;
+    font-size: 16px;
     
 }
 
 .cart-box{
+    position: relative;
     border: none;
     color: white;
     background: none;
+
 }

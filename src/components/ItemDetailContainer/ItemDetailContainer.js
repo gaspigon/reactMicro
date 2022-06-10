@@ -27,7 +27,7 @@ const ItemDetailContainer = (setCart) => {
     }
 
     return(
-        <div>
+        <div className="box-products">
             <ItemDetail  {...product} setCart={setCart} />
         </div>
     )
