@@ -3,31 +3,33 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css';
-import CartWidget from './components/CartWidget/CartWidget';
-import {createContext, useState} from 'react'
+import Cart from './components/Cart/Cart';
+import CartContextProvider from './context/CartContext';
 
-export const Context = createContext()
+
 
 const App = () => {
-  const [cart, setCart] = useState([])
- console.log(cart)
+
+
   
   return (
-
-    <div className="App">
-      <Context.Provider value={{cart, setCart}}>
+    <CartContextProvider>
+          <div className="App">
+  
         <BrowserRouter>
           <Navbar />
             <Routes>
                 <Route path='/' element={<ItemListContainer/>} />  
-                <Route path='/category/:categoryId' element={<ItemListContainer  greeting="Productos por categoria"/>} />
-                <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
-                <Route path='/cart' element={<CartWidget/>} />
+                <Route path='/category/:categoryId' element={<ItemListContainer greeting="Productos por categoria"/>} />
+                <Route path='/detail/:productId' element={<ItemDetailContainer   />}/>
+                <Route path='/cart' element={<Cart/>} />
           </Routes>
       </BrowserRouter>
-    </Context.Provider>
 
-    </div>
+
+          </div>
+    </CartContextProvider>
+
   );
 }
 

@@ -1,13 +1,15 @@
-.box{
+ .box{
+    position: absolute;
+    z-index: -1;
+    margin-top: 10%;
     text-align: center;
-    margin: 2%;
     width: 50%;
     height: 250px;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     overflow: hidden;
     
-}
+} 
 h2{
     margin-top: 0;
     display: flex;
@@ -17,7 +19,6 @@ h2{
     width: 100%;
 }
 .boxCard{
-    position: relative;
     text-align: left;
     overflow: hidden;
     float: left;

@@ -1,12 +1,20 @@
-import React from 'react'
-import '../CartWidget/CartWidget.css'
 
-const CartWidget = () =>{
+import '../CartWidget/CartWidget.css'
+import { useContext } from 'react'
+import { CartContext } from '../../context/CartContext'
+
+const CartWidget = () => {
+
+    const {getQuantity} = useContext(CartContext)
+
+    const quantity= getQuantity()
+
     return (
-        <div className="cart-box">
-            <img className="cart-img" src='./images/cart.png' alt='cart-widget' />
-            <p className="cart-p">6</p>
-        </div>
+        <button to='/cart' className="cart-box">
+            <img className='cart-img' src='/images/carttt.svg'/>
+            <p className='cart-p'>{quantity}</p>
+
+        </button>
     )
 }
 
