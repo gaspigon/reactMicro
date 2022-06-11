@@ -22,7 +22,7 @@ const Itemcount = ({stock,onConfirm}) => {
     return(
         <div >
             <div className='box-count'>
-                <ButtonCount handleClick ={decrement} label='-' color='red'/> 
+                <ButtonCount handleClick={decrement} label='-' color='red'/> 
                 <p className='number'>{count}</p>
                 <ButtonCount handleClick={increment} label='+' color='green' />
              </div>
