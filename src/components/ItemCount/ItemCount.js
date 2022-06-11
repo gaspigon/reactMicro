@@ -24,11 +24,12 @@ const Itemcount = ({stock,onConfirm}) => {
     return(
         <div >
             <div className='box-count'>
-                {/* <button onClick ={decrement}>-</button> */}
-                <ButtonCount onClick ={decrement} label='-' color='red'/> 
+
+                <ButtonCount handleClick={decrement} label='-' color='red'/> 
+
                 <p className='number'>{count}</p>
                 {/* <button onClick ={increment}>+</button> */}
-                <ButtonCount onClick={increment} label='+' color='green' /> 
+                <ButtonCount handleClick={increment} label='+' color='green' /> 
              </div>
             <div>
                 <button className='btn-agregar' onClick={() => onConfirm(count)}>Agregar a carrito</button>
