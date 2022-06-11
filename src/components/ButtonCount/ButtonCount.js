@@ -4,7 +4,7 @@ import '../ButtonCount/ButtonCount.css'
 const ButtonCount = (props) => {
     return (
             <div className='box-count'>
-                  <button className='btn-card' style={{color:props.color}} onClick={props.onClick}>{props.label}</button>
+                  <button className='btn-card' style={{color:props.color}} onClick={props.handleClick}>{props.label}</button>
             </div>
            
       

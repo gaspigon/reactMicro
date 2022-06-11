@@ -1,4 +1,4 @@
-
+import '../ItemDetailContainer/ItemDetailContainer.css'
 import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { getProductsById } from "../../asyncmock";
