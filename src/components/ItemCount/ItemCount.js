@@ -6,9 +6,10 @@ import ButtonCount from '../ButtonCount/ButtonCount'
 
 
 
-const Itemcount = ({stock,onConfirm}) => {
+const Itemcount = ({stock,onConfirm,initial=1}) => {
 
-    const [count, setCount] = useState(1)
+    const [count, setCount] = useState(initial)
+
 
     const decrement = () => {
         if (count > 1){

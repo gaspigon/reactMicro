@@ -10,12 +10,11 @@ const ItemDetail = ({id,price,name,img,description,stock}) =>{
 
     const [cantidad, setCantidad] = useState(0)
 
-    const {cart, addItem} = useContext(CartContext) 
+    const {cart, addItem, getProductQuantity} = useContext(CartContext) 
   
     
     const handleOnAdd = (count) => {
         console.log('agregue al carrito')
-        console.log(count)
         setCantidad(count)
         addItem({id,name,price,count})
 
@@ -29,7 +28,9 @@ const ItemDetail = ({id,price,name,img,description,stock}) =>{
                 <p className='boxText'>{description}</p>
                 <p>Stock Disponible:  {stock}</p> 
              <div className='box-itemCount'>
-                {cantidad > 0 ? <Link to='/cart'>Finalizar la compra</Link> : <ItemCount stock={stock} onConfirm={handleOnAdd} />}
+                {cantidad > 0 
+                ? <Link to='/cart'>Finalizar la compra</Link> 
+                : <ItemCount stock={stock} onConfirm={handleOnAdd} initial={getProductQuantity(id)?.count} />}
             </div>
                
             </div>

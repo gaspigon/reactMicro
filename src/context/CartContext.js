@@ -6,7 +6,24 @@ const CartContextProvider = ({children}) => {
     const [cart,setCart] = useState([])
 
     const addItem = (productToAdd) => {
-        setCart([...cart,productToAdd])
+
+      if(!prodInCart(productToAdd.id)){
+        setCart([...cart,productToAdd])  
+      }else {
+        const newCart = cart.map(prod => {
+          if(prod.id === productToAdd.id) {
+            const newProduct = {
+                ...prod, count : productToAdd.count
+            }
+            return newProduct
+          } else{
+            return prod
+          }
+        })
+
+        setCart(newCart)
+      }
+       
     }
 
     const getQuantity = () => {
@@ -16,7 +33,24 @@ const CartContextProvider = ({children}) => {
         })
         return accu
       }
-      return <CartContext.Provider value={{cart, addItem, getQuantity}}>
+
+      const prodInCart = (id) => {
+        return cart.some(prod => prod.id ===id)
+
+      }
+
+      const getProductQuantity = (id) => {
+        return cart.find(prod => prod.id === id)
+      
+      }
+
+      const removeItem = (id) => {
+       const newCart = cart.filter(prod => prod.id !==id)
+       setCart(newCart)
+      }
+     
+     
+     return <CartContext.Provider value={{cart, addItem, getQuantity, getProductQuantity,removeItem}}>
           {children}
       </CartContext.Provider>
 }
