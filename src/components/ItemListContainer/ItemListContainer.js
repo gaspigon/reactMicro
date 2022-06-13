@@ -5,8 +5,10 @@ import { getProducts } from '../../asyncmock'
 import { getProductsByCategory } from '../../asyncmock'
 import {  useParams } from 'react-router-dom'
 import Header from '../Header/Header'
-
 import ItemList from '../ItemList/ItemList'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { TailSpin} from  'react-loader-spinner'
+
 
 const ItemListContainer = (props) => {
 
@@ -43,7 +45,9 @@ const ItemListContainer = (props) => {
     },[categoryId])
 
     if(loading){
-        return <h1>Cargando...</h1>
+        return (
+            <TailSpin color="#00BFFF" height={80} width={80} />
+        )
     }
     
     return(
