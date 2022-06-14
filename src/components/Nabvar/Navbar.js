@@ -1,11 +1,17 @@
-
+import { useContext } from 'react'
 import '../Nabvar/Navbar.css'
 import CartWidget from '../CartWidget/CartWidget'
 import { NavLink } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext'
 
 
 
 const Navbar = () => {
+
+    const {getQuantity} = useContext(CartContext)
+
+    const quantity = getQuantity()
+
     return (
         <nav className="nav">
             
@@ -28,7 +34,7 @@ const Navbar = () => {
 
                     </li>
                     <li className="links"> 
-                        <CartWidget />
+                       {quantity > 0 && <CartWidget />}
                     </li>
                 </ul>
             </div>

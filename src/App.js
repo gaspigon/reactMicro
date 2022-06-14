@@ -5,17 +5,16 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css';
 import Cart from './components/Cart/Cart';
 import CartContextProvider from './context/CartContext';
+import { NotificationProvider } from './notification/Notification';
 
 
 
 const App = () => {
 
-
-  
   return (
-    <CartContextProvider>
-          <div className="App">
-  
+    <div className="App">
+   <CartContextProvider>
+      <NotificationProvider>
         <BrowserRouter>
           <Navbar />
             <Routes>
@@ -27,10 +26,11 @@ const App = () => {
       </BrowserRouter>
 
 
-          </div>
+      </NotificationProvider>
     </CartContextProvider>
-
+   </div>
   );
+  
 }
 
 export default App;

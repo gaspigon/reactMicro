@@ -1,0 +1,43 @@
+.cart-view{
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    margin-top: 10%;
+   
+}
+
+.box-cart{
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+
+}
+
+.item-cart{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    background-color: rgb(214, 214, 200);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    height: 80px;
+    margin-top: 20px;
+
+}
+
+p{
+    font-weight: bold;
+}
+
+.btn-remove{
+    height: 30px;
+    width: 30px;
+    margin-top: 22px;
+    margin-right: 10px;
+    border: none;
+    background-color: red;
+    color: white;
+    border-radius: 7px;
+    font-weight: bold;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}

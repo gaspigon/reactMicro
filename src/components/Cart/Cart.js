@@ -1,27 +1,40 @@
 import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
+import '../Cart/Cart.css'
 
 
 const Cart = () => {
 
-    const { cart, removeItem} = useContext(CartContext)
+    const { cart, removeItem, getQuantity, clearCart} = useContext(CartContext)
+
+    if(getQuantity() === 0) {
+        return (
+            <h1>Carrito Vacio!</h1>
+        )
+    }
+
     return(
-        <div>
-            <h1>Cart</h1>
-            <div>
+        <div className="cart-view">
+           
+            <div className="box-cart">
                 {cart.map(prod => {
                     return(
-                        <div key={prod.id}>
-                         <div > {prod.name} </div>
-                                <div>Cantidad {prod.count}</div>
-                                <div>Precio: ${prod.price}</div>
-                                <div>Subtotal: ${prod.price * prod.count}</div>
-                                <button onClick={() => removeItem(prod.id)}>X</button>
+                        <div key={prod.id} className="item-cart">
+                                <p> {prod.name} </p>
+                                <p> Cantidad {prod.count} </p>
+                                <p>Precio: ${prod.price}</p>
+                                <p>Subtotal: ${prod.price * prod.count}</p>
+                                <button className="btn-remove" onClick={() => removeItem(prod.id)}>X</button>
+                                {/* <button onClick={() => clearCart()} className="Button">Limpiar carrito</button> */}
                         </div>
                             )})
                 }
+                
             </div> 
-        
+
+                  <button onClick={() => clearCart()} className="btn-cart">Limpiar carrito</button>
+
+          
         </div>
      )
 }
