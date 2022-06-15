@@ -21,11 +21,11 @@ const Cart = () => {
                     return(
                         <div key={prod.id} className="item-cart">
                                 <p> {prod.name} </p>
-                                <p> Cantidad {prod.count} </p>
+                                <p> Cantidad: {prod.count} </p>
                                 <p>Precio: ${prod.price}</p>
                                 <p>Subtotal: ${prod.price * prod.count}</p>
                                 <button className="btn-remove" onClick={() => removeItem(prod.id)}>X</button>
-                                {/* <button onClick={() => clearCart()} className="Button">Limpiar carrito</button> */}
+                             
                         </div>
                             )})
                 }
