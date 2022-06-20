@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
 import '../Cart/Cart.css'
-import { addDoc, collection, getDocs, query, where, documentId} from 'firebase/firestore'
+import { addDoc, collection, getDocs, query, where, documentId, writeBatch} from 'firebase/firestore'
 import { db, collectionsName} from '../../services/firebase'
 import { deepCopy } from "@firebase/util"
 
