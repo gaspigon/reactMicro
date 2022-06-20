@@ -1,16 +1,22 @@
-import { useContext } from "react"
+import {useState, useContext } from "react"
 import { CartContext } from "../../context/CartContext"
 import '../Cart/Cart.css'
 import { addDoc, collection, getDocs, query, where, documentId, writeBatch} from 'firebase/firestore'
+<<<<<<< HEAD
 import { db, collectionsName} from '../../services/firebase'
 import { deepCopy } from "@firebase/util"
+=======
+import { db} from '../../services/firebase'
+import { useNotification} from '../../notification/Notification'
+>>>>>>> firebaseII
 
 
 
 const Cart = () => {
-
+    const [loading, setLoading] = useState(false)
     const { cart, removeItem, getQuantity, clearCart,getTotal} = useContext(CartContext)
 
+<<<<<<< HEAD
     // const [buyer, setBuyer] = useState({
     //     name: '',
     //     emai: '',
@@ -19,8 +25,13 @@ const Cart = () => {
     //     comment: ''
 
     // })
+=======
+    const {setNotification } = useNotification()
+>>>>>>> firebaseII
 
     const createOrder = () =>{
+        setLoading(true)
+
         const objOrder = {
             buyer: {
                 name: 'gaspar',
@@ -33,7 +44,12 @@ const Cart = () => {
         }
 
         const ids = cart.map(prod => prod.id)
+<<<<<<< HEAD
         console.log(ids)
+=======
+        
+        const batch = writeBatch(db)
+>>>>>>> firebaseII
 
         const outOfStock = []
 
@@ -47,11 +63,35 @@ const Cart = () => {
                     const prodQuantity = cart.find(prod => prod.id === doc.id)?.count
 
                     if(dataDoc.stock >= prodQuantity){
+<<<<<<< HEAD
 
+=======
+                        batch.update(doc.ref, {stock: dataDoc.stock - prodQuantity})
+>>>>>>> firebaseII
                     } else{
                         outOfStock.push({ id: doc.id, ...dataDoc})
                     }
                 })
+<<<<<<< HEAD
+=======
+            }).then(() => {
+                if(outOfStock.length === 0 ){
+                    const collectionRef = collection(db, 'orders')
+
+                    return addDoc(collectionRef, objOrder)
+                }else {
+                  return Promise.reject({type: 'out_of_stock', products: outOfStock})  
+                }
+            }).then(({id}) => {
+                batch.commit()
+                setNotification('success',`el id de la orden es: ${id}`)
+                clearCart()
+            }).catch(error => {
+                console.log(error)
+                setNotification('error','Algunos productos no tienen stock')
+            }).finally(() =>{
+                setLoading(false)
+>>>>>>> firebaseII
             })
 
 
@@ -62,6 +102,13 @@ const Cart = () => {
         // addDoc(collectionRef,objOrder).then(({id}) => {
         //     console.log(`se creo la orden con el id: ${id}`)
         // })
+<<<<<<< HEAD
+=======
+    }
+
+    if (loading) {
+        <h1>Generando orden..</h1>
+>>>>>>> firebaseII
     }
 
     if(getQuantity() === 0) {
