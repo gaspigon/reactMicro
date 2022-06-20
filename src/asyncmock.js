@@ -40,7 +40,7 @@ const products = [
         name: 'Artillery X1',
         price: 60000,
         category: 'impresoras',
-        img: '/images/arti.png',
+        img: '/images/artill.jpg',
         stock: 20,
         description: 'Impresora 3D'
     },
