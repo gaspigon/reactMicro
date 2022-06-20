@@ -25,7 +25,8 @@ const Cart = () => {
             buyer: {
                 name: 'gaspar',
                 email:'gg@gg',
-                phone: '123456'
+                phone: '123456',
+                address: 'coperni'
             },
             items: cart,
             total: getTotal()
