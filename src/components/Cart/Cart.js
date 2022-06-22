@@ -8,18 +8,12 @@ import FormData from "../Form/Form"
 
 
 
-const Cart = () => {
+const Cart = (buyer, setBuyer) => {
     const [loading, setLoading] = useState(false)
     const { cart, removeItem, getQuantity, clearCart,getTotal} = useContext(CartContext)
 
     const {setNotification } = useNotification()
 
-    const [buyer, setBuyer] = useState({
-        name: '',
-        phone: '',
-        email: ''
-     })
-    
 
     const createOrder = () =>{
         setLoading(true)
@@ -112,9 +106,9 @@ const Cart = () => {
                  <h3>Total: ${getTotal()}</h3>
                   <button onClick={() => clearCart()} className="btn-cart">Limpiar carrito</button>
                   <button onClick={createOrder} >Generar Orden</button>
-                  <FormData buyer={buyer} setBuyer={setBuyer} /> 
+                   <FormData buyer={buyer} setBuyer={setBuyer}/>  
                   {/* <ContactForm buyer={buyer} setBuyer={setBuyer} /> */}
-                  {/* <input value={buyer.name} onChange={(e) => setBuyer({...buyer, name: e.target.value})} /> */} 
+                 
 
           
         </div>
