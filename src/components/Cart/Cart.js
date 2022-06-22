@@ -106,7 +106,7 @@ const Cart = (buyer, setBuyer) => {
                  <h3>Total: ${getTotal()}</h3>
                   <button onClick={() => clearCart()} className="btn-cart">Limpiar carrito</button>
                   <button onClick={createOrder} >Generar Orden</button>
-                   <FormData buyer={buyer} setBuyer={setBuyer}/>  
+                   <FormData buyer={buyer} setBuyer={setBuyer}/> 
                   {/* <ContactForm buyer={buyer} setBuyer={setBuyer} /> */}
                  
 
