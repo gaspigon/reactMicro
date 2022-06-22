@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import { useForm } from "react-hook-form";
 
 
-const FormData = () => {
+const FormData = ({setShowForm, setBuyerData}) => {
 
   const [buyer, setBuyer] = useState({
     name: '',
@@ -19,7 +19,8 @@ const FormData = () => {
 
   const submitData = (e) => {
     e.preventDefault()
-
+    setBuyerData(buyer)
+    setShowForm(false)
   }
 
   return (
