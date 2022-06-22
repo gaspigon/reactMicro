@@ -4,10 +4,11 @@ import '../Cart/Cart.css'
 import { addDoc, collection, getDocs, query, where, documentId, writeBatch} from 'firebase/firestore'
 import { db} from '../../services/firebase'
 import { useNotification} from '../../notification/Notification'
+import FormData from "../Form/Form"
 
 
 
-const Cart = () => {
+const Cart = (buyer, setBuyer) => {
     const [loading, setLoading] = useState(false)
     const { cart, removeItem, getQuantity, clearCart,getTotal} = useContext(CartContext)
 
@@ -17,12 +18,7 @@ const Cart = () => {
         setLoading(true)
 
         const objOrder = {
-            buyer: {
-                name: 'gaspar',
-                email:'gg@gg',
-                phone: '123456',
-                address: 'coperni'
-            },
+            buyer,
             items: cart,
             total: getTotal()
         }
@@ -109,6 +105,9 @@ const Cart = () => {
                  <h3>Total: ${getTotal()}</h3>
                   <button onClick={() => clearCart()} className="btn-cart">Limpiar carrito</button>
                   <button onClick={createOrder} >Generar Orden</button>
+                   <FormData buyer={buyer} setBuyer={setBuyer}/> 
+                  {/* <ContactForm buyer={buyer} setBuyer={setBuyer} /> */}
+                 
 
           
         </div>
