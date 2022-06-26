@@ -65,13 +65,7 @@ const Cart = (buyer, setBuyer) => {
             })
 
 
-        // console.log(objOrder)
 
-        // const collectionRef = collection(db, collectionsName.orders)
-
-        // addDoc(collectionRef,objOrder).then(({id}) => {
-        //     console.log(`se creo la orden con el id: ${id}`)
-        // })
     }
 
     if (loading) {
@@ -105,7 +99,7 @@ const Cart = (buyer, setBuyer) => {
             </div> 
                  <h3>Total: ${getTotal()}</h3>
                   <button onClick={() => clearCart()} className="btn-cart">Limpiar carrito</button>
-                  <button onClick={createOrder} >Generar Orden</button>
+                  <button onClick={createOrder} className="btn-confirm">Finalizar Compra</button>
                    <FormData buyer={buyer} setBuyer={setBuyer}/> 
                   {/* <ContactForm buyer={buyer} setBuyer={setBuyer} /> */}
                  

@@ -10,6 +10,7 @@
     width: 80%;
     margin: 0 auto;
     justify-content: space-between;
+    
 
 }
 
@@ -40,4 +41,31 @@ p{
     border-radius: 7px;
     font-weight: bold;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.btn-cart{
+    border-radius: 5px;
+    background-color: red;
+    border:none;
+    color: white;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    width: 10%;
+    font-weight: bold;
+    height: 24px;
+    margin: 2%;
+}
+
+.btn-confirm{
+    border-radius: 5px;
+    border: none;
+    background-color: darkgreen;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    width: 10%;
+    height: 24px;
+    margin: 2%;
 }
