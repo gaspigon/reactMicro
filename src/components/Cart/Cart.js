@@ -5,12 +5,15 @@ import { addDoc, collection, getDocs, query, where, documentId, writeBatch} from
 import { db} from '../../services/firebase'
 import { useNotification} from '../../notification/Notification'
 import FormData from "../Form/Form"
+import { NavLink } from "react-router-dom"
 
 
 
 const Cart = (buyer, setBuyer) => {
     const [loading, setLoading] = useState(false)
     const { cart, removeItem, getQuantity, clearCart,getTotal} = useContext(CartContext)
+    const [buyerData, setBuyerData] = useState({})
+    const [showForm, setShowForm] = useState(true)
 
     const {setNotification } = useNotification()
 
@@ -19,7 +22,7 @@ const Cart = (buyer, setBuyer) => {
         setLoading(true)
 
         const objOrder = {
-            buyer,
+            buyer: buyerData,
             items: cart,
             total: getTotal()
         }
@@ -74,7 +77,11 @@ const Cart = (buyer, setBuyer) => {
 
     if(getQuantity() === 0) {
         return (
-            <h1>Carrito Vacio!</h1>
+            <div className="box-empty">
+               <h1 >Carrito Vacio!</h1> 
+               <NavLink to={'/'} className="btn-products">Ver Productos</NavLink>
+            </div>
+            
         )
     }
 
@@ -100,8 +107,8 @@ const Cart = (buyer, setBuyer) => {
                  <h3>Total: ${getTotal()}</h3>
                   <button onClick={() => clearCart()} className="btn-cart">Limpiar carrito</button>
                   <button onClick={createOrder} className="btn-confirm">Finalizar Compra</button>
-                   <FormData buyer={buyer} setBuyer={setBuyer}/> 
-                  {/* <ContactForm buyer={buyer} setBuyer={setBuyer} /> */}
+                   {showForm && <FormData setShowForm={setShowForm} setBuyerData={setBuyerData} />} 
+                  
                  
 
           

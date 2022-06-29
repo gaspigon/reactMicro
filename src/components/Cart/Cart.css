@@ -69,3 +69,27 @@ p{
     height: 24px;
     margin: 2%;
 }
+
+.box-empty{
+    position: absolute;
+    justify-content: center;
+    margin-top: 10%;
+    width: 100%;
+    height: 400px;
+}
+
+.btn-products{
+    display: flex;
+   justify-content: center;
+   align-items: center;
+    width: 12%;
+    height: 30px;
+    margin: 0 auto;
+    text-decoration: none;
+    background-color: brown;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+
+}

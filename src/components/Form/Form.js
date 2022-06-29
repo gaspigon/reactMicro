@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import '../Form/Form.css'
-// import { useForm } from "react-hook-form";
 
 
-const FormData = () => {
+const FormData = ({setShowForm, setBuyerData}) => {
 
   const [buyer, setBuyer] = useState({
     name: '',
@@ -11,15 +10,11 @@ const FormData = () => {
     phone: ''
   })
 
-  // const handleInputChange = (e) => {
-  //   setBuyer({
-  //     ...buyer,
-  //     [e.target.name]: e.target.value
-  //   })
-  // }
 
   const submitData = (e) => {
     e.preventDefault()
+    setBuyerData(buyer)
+    setShowForm(false)
 
   }
 
