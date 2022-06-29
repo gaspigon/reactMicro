@@ -5,6 +5,7 @@ import { addDoc, collection, getDocs, query, where, documentId, writeBatch} from
 import { db} from '../../services/firebase'
 import { useNotification} from '../../notification/Notification'
 import FormData from "../Form/Form"
+import { NavLink } from "react-router-dom"
 
 
 
@@ -13,6 +14,8 @@ const Cart = (buyer, setBuyer) => {
     const [buyerData, setBuyerData] =useState({})
     const [showForm, setShowForm] = useState(true)
     const { cart, removeItem, getQuantity, clearCart,getTotal} = useContext(CartContext)
+    const [buyerData, setBuyerData] = useState({})
+    const [showForm, setShowForm] = useState(true)
 
     const {setNotification } = useNotification()
 
@@ -20,7 +23,11 @@ const Cart = (buyer, setBuyer) => {
         setLoading(true)
 
         const objOrder = {
+<<<<<<< HEAD
             buyer:buyerData,
+=======
+            buyer: buyerData,
+>>>>>>> firebaseII
             items: cart,
             total: getTotal()
         }
@@ -66,13 +73,7 @@ const Cart = (buyer, setBuyer) => {
             })
 
 
-        // console.log(objOrder)
 
-        // const collectionRef = collection(db, collectionsName.orders)
-
-        // addDoc(collectionRef,objOrder).then(({id}) => {
-        //     console.log(`se creo la orden con el id: ${id}`)
-        // })
     }
 
     if (loading) {
@@ -81,7 +82,11 @@ const Cart = (buyer, setBuyer) => {
 
     if(getQuantity() === 0) {
         return (
-            <h1>Carrito Vacio!</h1>
+            <div className="box-empty">
+               <h1 >Carrito Vacio!</h1> 
+               <NavLink to={'/'} className="btn-products">Ver Productos</NavLink>
+            </div>
+            
         )
     }
 
@@ -106,9 +111,15 @@ const Cart = (buyer, setBuyer) => {
             </div> 
                  <h3>Total: ${getTotal()}</h3>
                   <button onClick={() => clearCart()} className="btn-cart">Limpiar carrito</button>
+<<<<<<< HEAD
                   <button onClick={createOrder} >Generar Orden</button>
                    {showForm && <FormData setShowForm={setShowForm} setBuyerData={setBuyerData}/>} 
                   {/* <ContactForm buyer={buyer} setBuyer={setBuyer} /> */}
+=======
+                  <button onClick={createOrder} className="btn-confirm">Finalizar Compra</button>
+                   {showForm && <FormData setShowForm={setShowForm} setBuyerData={setBuyerData} />} 
+                  
+>>>>>>> firebaseII
                  
 
           

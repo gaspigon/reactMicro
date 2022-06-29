@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { useForm } from "react-hook-form";
+import '../Form/Form.css'
 
 
 const FormData = ({setShowForm, setBuyerData}) => {
@@ -10,25 +10,26 @@ const FormData = ({setShowForm, setBuyerData}) => {
     phone: ''
   })
 
-  // const handleInputChange = (e) => {
-  //   setBuyer({
-  //     ...buyer,
-  //     [e.target.name]: e.target.value
-  //   })
-  // }
 
   const submitData = (e) => {
     e.preventDefault()
     setBuyerData(buyer)
     setShowForm(false)
+<<<<<<< HEAD
+=======
+
+>>>>>>> firebaseII
   }
 
   return (
-      <form onSubmit={submitData}>
-        <input type={'text'} placeholder='nombre' value={buyer.name} onChange={(e) => setBuyer({...buyer, name: e.target.value})} />
-        <input type={'email'} placeholder='email' value={buyer.email} onChange={(e) => setBuyer({...buyer, email: e.target.value})}/>
-        <input type={'number'} placeholder='celular' value={buyer.phone} onChange={(e) => setBuyer({...buyer, phone: e.target.value})} />
-        <input type={'submit'}/>
+      <form className="form" onSubmit={submitData}>
+        <div className="box-form">
+          <input type={'text'} placeholder='nombre' value={buyer.name} onChange={(e) => setBuyer({...buyer, name: e.target.value})} />
+          <input type={'email'} placeholder='email' value={buyer.email} onChange={(e) => setBuyer({...buyer, email: e.target.value})}/>
+          <input type={'number'} placeholder='celular' value={buyer.phone} onChange={(e) => setBuyer({...buyer, phone: e.target.value})} />
+          <input type={'submit'}/>
+        </div>
+        
       </form>
   );
 }
