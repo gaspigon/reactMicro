@@ -9,28 +9,32 @@ import { NavLink } from "react-router-dom"
 
 
 
-const Cart = (buyer, setBuyer) => {
+const Cart = () => {
     const [loading, setLoading] = useState(false)
     const [buyerData, setBuyerData] =useState({})
-    const [showForm, setShowForm] = useState(true)
+    const [showForm, setShowForm] = useState(false)
+    const [disable, setDisable] = useState(true)
+  
+   
+
+
+
     const { cart, removeItem, getQuantity, clearCart,getTotal} = useContext(CartContext)
-    const [buyerData, setBuyerData] = useState({})
-    const [showForm, setShowForm] = useState(true)
+
 
     const {setNotification } = useNotification()
 
+
+
     const createOrder = () =>{
-        setLoading(true)
+      setLoading(true)
 
         const objOrder = {
-<<<<<<< HEAD
-            buyer:buyerData,
-=======
             buyer: buyerData,
->>>>>>> firebaseII
             items: cart,
             total: getTotal()
         }
+
 
         const ids = cart.map(prod => prod.id)
         
@@ -111,15 +115,11 @@ const Cart = (buyer, setBuyer) => {
             </div> 
                  <h3>Total: ${getTotal()}</h3>
                   <button onClick={() => clearCart()} className="btn-cart">Limpiar carrito</button>
-<<<<<<< HEAD
-                  <button onClick={createOrder} >Generar Orden</button>
-                   {showForm && <FormData setShowForm={setShowForm} setBuyerData={setBuyerData}/>} 
-                  {/* <ContactForm buyer={buyer} setBuyer={setBuyer} /> */}
-=======
-                  <button onClick={createOrder} className="btn-confirm">Finalizar Compra</button>
-                   {showForm && <FormData setShowForm={setShowForm} setBuyerData={setBuyerData} />} 
+                  <button id="button-fin" onClick={() => setShowForm(true) } className="btn-confirm">Finalizar Compra</button>
+                  <button disabled={disable} className="btn-crear" onClick={createOrder}> Crear Orden</button>
                   
->>>>>>> firebaseII
+                    {showForm  && <FormData setShowForm={setShowForm} setBuyerData={setBuyerData} setDisable={setDisable} />} 
+            
                  
 
           

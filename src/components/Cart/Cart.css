@@ -93,3 +93,14 @@ p{
     margin-top: 10px;
 
 }
+
+.btn-crear{
+    width: 10%;
+    height: 25px;
+    background-color: rgb(198, 184, 210);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
