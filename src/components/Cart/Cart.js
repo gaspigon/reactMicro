@@ -6,6 +6,7 @@ import { db} from '../../services/firebase'
 import { useNotification} from '../../notification/Notification'
 import FormData from "../Form/Form"
 import { NavLink } from "react-router-dom"
+import { TailSpin} from  'react-loader-spinner'
 
 
 
@@ -81,7 +82,11 @@ const Cart = () => {
     }
 
     if (loading) {
-        <h1>Generando orden..</h1>
+        return (
+        <div className='loader'>
+            <TailSpin width={1200}   color="#00BFFF" />
+       </div>
+        )
     }
 
     if(getQuantity() === 0) {

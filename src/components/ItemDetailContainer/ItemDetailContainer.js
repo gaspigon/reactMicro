@@ -1,10 +1,9 @@
 import '../ItemDetailContainer/ItemDetailContainer.css'
 import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { getProductsById } from "../../asyncmock";
 import { useParams } from "react-router-dom";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import { Audio } from  'react-loader-spinner'
+import { TailSpin } from  'react-loader-spinner'
 import { db } from '../../services/firebase';
 import {getDoc, doc } from 'firebase/firestore'
 
@@ -37,7 +36,9 @@ const ItemDetailContainer = () => {
 
     if(loading) {
         return (
-            <Audio />
+        <div className='loader'>
+            <TailSpin width={1200}   color="#00BFFF" />
+       </div>
         )
     }
 

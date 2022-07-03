@@ -1,14 +1,11 @@
 import React from 'react'
 import '../ItemListContainer/ItemListContainer.css'
 import {useState, useEffect } from 'react'
-// import { getProducts } from '../../asyncmock'
-// import { getProductsByCategory } from '../../asyncmock'
 import {  useParams } from 'react-router-dom'
 import Header from '../Header/Header'
 import ItemList from '../ItemList/ItemList'
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { TailSpin} from  'react-loader-spinner'
-
 import { getDocs, collection, query, where  } from 'firebase/firestore'
 import { db } from '../../services/firebase'
 
@@ -63,7 +60,10 @@ const ItemListContainer = (props) => {
 
     if(loading){
         return (
-            <TailSpin color="#00BFFF" height={80} width={80} />
+            <div className='loader'>
+                 <TailSpin width={1200}   color="#00BFFF" />
+            </div>
+           
         )
     }
     
