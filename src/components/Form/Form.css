@@ -3,21 +3,45 @@
     justify-content: center;
     align-items: center;
     
+    
 }
 
 .box-form{
-    width: 50%;
-    height: 300px;
+    margin-top: 30px;
+    width: 30%;
+    height: 260px;
+    border: 1px solid black;
+    background-color: rgb(214, 214, 200);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 }
 
-input{
-    width: 50%;
+.form-input{
+    width: 70%;
     height: 25px;
     margin: 0 auto;
     display: flex;
-    margin-bottom: 3%;
+    margin-top: 7%;
+   
     text-align: center;
     border: none;
     border-bottom: 1px solid black;
+    background: inherit;
+   outline: none;
+       
+    
+    
 
 }
+
+.form-submit{
+    width: 70%;
+    height: 30px;
+    margin-top: 5%;
+    border: none;
+    border-radius: 5px;
+    background-color: #0277bd ;
+    color: white;
+}
+
