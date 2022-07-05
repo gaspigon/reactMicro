@@ -17,7 +17,6 @@ const ItemDetail = ({id,price,name,img,description,stock}) =>{
   
     
     const handleOnAdd = (count) => {
-        console.log('agregue al carrito')
         setCantidad(count)
         setNotification('success', 'Se agrego correctamente al carrito ')
         addItem({id,name,price,count})
@@ -39,7 +38,7 @@ const ItemDetail = ({id,price,name,img,description,stock}) =>{
                
             </div>
              <div className='box-img'>
-                <img className='img' src={img} />
+                <img className='img' src={img} alt={"Imagen Producto"} />
             </div>
         </div> 
 

@@ -38,23 +38,7 @@ const ItemListContainer = (props) => {
         }).finally(() => {
             setLoading(false)
         })
-    //     if(!categoryId){
-    //     getProducts().then(response =>{
-    //         setProducts(response)
-    //     }).catch(error => {
-    //         console.log(error)
-    //     }).finally(() => {
-    //         setLoading(false)
-    //     })
-    // } else{
-    //     getProductsByCategory(categoryId).then(response => {
-    //         setProducts(response)
-    //     }).catch(error =>{
-    //         console.log(error)
-    //     }).finally(() =>{
-    //         setLoading(false)
-    //     })
-    // }
+
 
     },[categoryId])
 
@@ -69,7 +53,7 @@ const ItemListContainer = (props) => {
     
     return(
         <div>
-            {/* { products.map(product => <p>{product.name}</p>) } */}
+           
             <Header greeting="Micro 3D" parraf="Productos & Diseños"/>
             <h1 >{props.greeting}</h1>
             {
