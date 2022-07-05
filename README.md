@@ -6,6 +6,23 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+## Running Locally
+´´´bash
+$ git clone https://github.com/gaspigon/reactMicro
+$cd microReact
+$npm install
+$npm start
+´´´
+## Enviroment Varibales
+
+//FirebaseConfig:
+
+See ['.env.example'](https://github.com/gaspigon/reactMicro/main/.env.example)
+
+El documento del producto 
+
+
+
 ### `npm start`
 
 Runs the app in the development mode.\
